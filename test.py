@@ -2,7 +2,7 @@ suma = 20+5
 print("Hola mundo")
 print(suma)
 
-""" another example """
+""" Another example """
 
 print("Hello world!")
 
@@ -10,8 +10,8 @@ saludo = "Hola mundo!"
 print(saludo)
 
 def saludar():
-    #uso de la identación que indica 
-    #que esta línea esta dentro de la sentencia previa
+    #Uso de la identación que indica 
+    #Que esta línea esta dentro de la sentencia previa
     return "Hello world!"
 
 print(saludar())
