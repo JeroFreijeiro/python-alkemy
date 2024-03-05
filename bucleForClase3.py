@@ -98,3 +98,15 @@ for dato in persona1.items(): # son dos for anidados
     30
     altura
     1.75 """
+
+# desafío en clase
+persona1 = {
+    "nombre" : "Juan",
+    "apellido" : "Perez",
+    "edad" : 30,
+    "altura" : 1.75
+}
+
+
+for p in persona1:
+    print(f'{p}: {persona1[p]}')
