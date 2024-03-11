@@ -71,7 +71,19 @@ class Auto: # El nombre de la clase (la 1ra letra) va siempre en mayúscula
             print("Motor del " + self.getModelo() + " apagado, lo voy a encender")
             self.estadoMotor = True
             print("Motor encendido")
-
+    def subirVelocidad(self):
+        # creamos la condición IF para que no se exceda en sumar cambios al vehículo
+        if(self.estadoCambios < self.velocidades):
+            self.estadoCambios += 1 
+            print(f'el {self.getModelo()} estaba en {self.estadoCambios - 1 } ahora esta en {self.estadoCambios}')
+        else:
+            print("No podes subir mas")
+    def bajarVelocidad(self):
+        if(self.estadoCambios > -1): # aca es -1 porque es lo máximo que se puede bajar - la reversa -
+            self.estadoCambios -= 1 
+            print(f'el {self.getModelo()} estaba en {self.estadoCambios + 1 } ahora esta en {self.estadoCambios}')
+        else:
+            print("No podes bajar más")
 
 auto1 = Auto("Toyota", "Prius", "Blanco",True, 1, 6)
 auto2 = Auto("Fiat", "Cronos", "Rojo", False, 0, 5)
@@ -111,4 +123,64 @@ Motor encendido
 Motor del 208 apagado, lo voy a encender
 Motor encendido """
 
+# testeando el estado subirVelocidad
+auto1.subirVelocidad()  # el Prius estaba en 1 ahora esta en 2
+# testeando el estado bajarVelocidad
+auto1.bajarVelocidad()  # el Prius estaba en 4 ahora esta en 3 <-(este resultado me arrojo antes de cambiar el signo de + a -, ojo porque el código puede funcionar pero está mal)
+# el Prius estaba en 2 ahora esta en 1 <-(resultado con el signo correcto)
 
+#los vehículos tienen determinadas cantidad de cambios para realiza, ¿que pasa si se excede?
+auto1.subirVelocidad()
+auto1.subirVelocidad()
+auto1.subirVelocidad()
+auto1.subirVelocidad()
+auto1.subirVelocidad()
+auto1.subirVelocidad()
+auto1.subirVelocidad()
+auto1.subirVelocidad()
+auto1.subirVelocidad()
+auto1.subirVelocidad()
+""" el Prius estaba en 1 ahora esta en 2
+el Prius estaba en 2 ahora esta en 3
+el Prius estaba en 3 ahora esta en 4
+el Prius estaba en 4 ahora esta en 5
+el Prius estaba en 5 ahora esta en 6
+el Prius estaba en 6 ahora esta en 7            # inconsistente o erróneo, se crea una CONDICIÓN IF
+el Prius estaba en 7 ahora esta en 8
+el Prius estaba en 8 ahora esta en 9
+el Prius estaba en 9 ahora esta en 10
+el Prius estaba en 10 ahora esta en 11 """
+
+""" el Prius estaba en 1 ahora esta en 2
+el Prius estaba en 2 ahora esta en 3
+el Prius estaba en 3 ahora esta en 4
+el Prius estaba en 4 ahora esta en 5
+el Prius estaba en 5 ahora esta en 6            # condicion ya creada
+No podes subir mas
+No podes subir mas
+No podes subir mas
+No podes subir mas
+No podes subir mas """
+
+
+auto1.bajarVelocidad()
+auto1.bajarVelocidad()
+auto1.bajarVelocidad()
+auto1.bajarVelocidad()
+auto1.bajarVelocidad()
+auto1.bajarVelocidad()
+auto1.bajarVelocidad()
+auto1.bajarVelocidad()
+auto1.bajarVelocidad()
+auto1.bajarVelocidad()
+
+""" el Prius estaba en 6 ahora esta en 5
+el Prius estaba en 5 ahora esta en 4
+el Prius estaba en 4 ahora esta en 3
+el Prius estaba en 3 ahora esta en 2
+el Prius estaba en 2 ahora esta en 1
+el Prius estaba en 1 ahora esta en 0
+el Prius estaba en 0 ahora esta en -1
+No podes bajar m�s
+No podes bajar m�s
+No podes bajar m�s """
