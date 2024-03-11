@@ -18,7 +18,7 @@
 # 2- el comportamiento
 # 3- el estado
 
-# POO - Un objeto es una entidad 
+# POO - Un objeto es una 'entidad' 
 # ATRIBUTOS/PROPIEDADES - que tiene determinadas características
 # MÉTODOS - puede realizar acciones, tiene 'x' comportamiento
 # ESTADOS - puede tener un estado
@@ -33,3 +33,44 @@
 # O sea, cada auto que creemos es un OBJETO, y cada objeto que creemos es una INSTANCIA DE ESA CLASE (AUTO)"
 
 
+class Auto: # El nombre de la clase (la 1ra letra) va siempre en mayúscula
+    #constructor - acá definimos los ATRIBUTOS
+    def __init__(self, marca, modelo, color):
+        self.marca = marca
+        self.modelo = modelo
+        self.color = color
+    #métodos - permiten funcionalidades
+    #getters - muestran los atributos fuera del contexto de la clase
+    def getMarca(self):
+        return self.marca
+    def getModelo(self):
+        return self.modelo
+    def getColor(self):
+        return self.color
+    def getAuto(self):
+        print("Marca: " + self.getMarca())
+        print("Modelo: " + self.getModelo())
+        print("Color: " + self.getColor())
+
+
+auto1 = Auto("Toyota", "Prius", "Blanco")
+auto2 = Auto("Fiat", "Cronos", "Rojo")
+auto3 = Auto("Peugeot", "208", "Gris")
+
+auto1.getAuto() # getAuto es el getter que se creó en la CLASE AUTO, trajo marca modelo y color
+print("----------")
+auto2.getAuto()
+print("----------")
+auto3.getAuto()
+
+""" Marca: Toyota
+Modelo: Prius
+Color: Blanco
+----------
+Marca: Fiat
+Modelo: Cronos
+Color: Rojo
+----------
+Marca: Peugeot
+Modelo: 208
+Color: Gris """
