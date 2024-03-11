@@ -53,11 +53,11 @@ class Auto: # El nombre de la clase (la 1ra letra) va siempre en mayúscula
     #métodos - permiten funcionalidades
     #getters - muestran los atributos fuera del contexto de la clase
     def getMarca(self):
-        return self.marca
+        return self.marca  #CLAVE
     def getModelo(self):
-        return self.modelo
+        return self.modelo  #CLAVE
     def getColor(self):
-        return self.color
+        return self.color  #CLAVE
     def getAuto(self):
         print("Marca: " + self.getMarca())
         print("Modelo: " + self.getModelo())
@@ -86,8 +86,16 @@ class Auto: # El nombre de la clase (la 1ra letra) va siempre en mayúscula
             print("No podes bajar más")
 
 auto1 = Auto("Toyota", "Prius", "Blanco",True, 1, 6)
+            #VALOR
 auto2 = Auto("Fiat", "Cronos", "Rojo", False, 0, 5)
+            #VALOR
 auto3 = Auto("Peugeot", "208", "Gris", False, -1, 5)
+            #VALOR
+# Estos son objetos, son par clave-valor, key-value, propiedades-atributos
+# EN LOS EJEMPLOS DE ARRIBA APLICA LA MISMA LÓGICA QUE OBJETOS PERO UTILIZANDO EL "MOLDE" AUTO
+# Ej: CLAVE(): Marca - VALOR(): Toyota / CLAVE(): Modelo - VALOR(): Prius / Etc...
+
+# obj = {"Nombre" : "Juan", "Apellido" : "Perez"} OBJETO PAR CLAVE-VALOR
 
 auto1.getAuto() # getAuto es el getter que se creó en la CLASE AUTO, trajo marca modelo y color
 print("----------")
