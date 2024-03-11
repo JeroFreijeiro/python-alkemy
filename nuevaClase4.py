@@ -19,9 +19,9 @@
 # 3- el estado
 
 # POO - Un objeto es una 'entidad' 
-# ATRIBUTOS/PROPIEDADES - que tiene determinadas características
-# MÉTODOS - puede realizar acciones, tiene 'x' comportamiento
-# ESTADOS - puede tener un estado
+# 1. ATRIBUTOS/PROPIEDADES - que tiene determinadas características
+# 2. MÉTODOS - puede realizar acciones, tiene 'x' comportamiento
+# 3. ESTADOS - puede tener un estado
 
 
 # CLASES
@@ -35,10 +35,21 @@
 
 class Auto: # El nombre de la clase (la 1ra letra) va siempre en mayúscula
     #constructor - acá definimos los ATRIBUTOS
-    def __init__(self, marca, modelo, color):
+    def __init__(
+                self,
+                marca, 
+                modelo, 
+                color, 
+                estadoMotor, #¿cuantos estados tiene un motor?: dos, prendido, apagado. Boolean True/False
+                estadoCambios, 
+                velocidades
+            ): #los últimos tres son ESTADOS (estadoMotor, estadoCambios, velocidades)
         self.marca = marca
         self.modelo = modelo
         self.color = color
+        self.estadoMotor = estadoMotor
+        self.estadoCambios = estadoCambios
+        self.velocidades = velocidades
     #métodos - permiten funcionalidades
     #getters - muestran los atributos fuera del contexto de la clase
     def getMarca(self):
@@ -51,11 +62,20 @@ class Auto: # El nombre de la clase (la 1ra letra) va siempre en mayúscula
         print("Marca: " + self.getMarca())
         print("Modelo: " + self.getModelo())
         print("Color: " + self.getColor())
+    def cambiarEstadoMotor(self):
+        if(self.estadoMotor): # acá el == True es redundante, ya está explicitado
+            print("Motor del " + self.getModelo() + " prendido, lo voy a apagar")
+            self.estadoMotor = False
+            print("Motor apagado")
+        else:
+            print("Motor del " + self.getModelo() + " apagado, lo voy a encender")
+            self.estadoMotor = True
+            print("Motor encendido")
 
 
-auto1 = Auto("Toyota", "Prius", "Blanco")
-auto2 = Auto("Fiat", "Cronos", "Rojo")
-auto3 = Auto("Peugeot", "208", "Gris")
+auto1 = Auto("Toyota", "Prius", "Blanco",True, 1, 6)
+auto2 = Auto("Fiat", "Cronos", "Rojo", False, 0, 5)
+auto3 = Auto("Peugeot", "208", "Gris", False, -1, 5)
 
 auto1.getAuto() # getAuto es el getter que se creó en la CLASE AUTO, trajo marca modelo y color
 print("----------")
@@ -74,3 +94,21 @@ Color: Rojo
 Marca: Peugeot
 Modelo: 208
 Color: Gris """
+
+auto1.cambiarEstadoMotor()
+""" Marca: Peugeot
+Modelo: 208
+Color: Gris
+Motor prendido, lo voy a apagar
+Motor apagado """
+
+auto2.cambiarEstadoMotor()
+auto3.cambiarEstadoMotor()
+""" Motor del Prius prendido, lo voy a apagar
+Motor apagado
+Motor del Cronos apagado, lo voy a encender
+Motor encendido
+Motor del 208 apagado, lo voy a encender
+Motor encendido """
+
+
