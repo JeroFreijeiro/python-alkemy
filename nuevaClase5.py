@@ -98,3 +98,8 @@ print(algo.apellido)
           ^^^^^^^^^^^^^
 AttributeError: 'Algo' object has no attribute '__nombre' """
 
+
+
+# ------------ HERENCIA ------------
+
+# 

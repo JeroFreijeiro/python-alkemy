@@ -22,7 +22,7 @@ print(saludo)
 # Boliche 18 o más años
 # Matinee entre 13 y 17
 
-edad = 18
+edad = 10
 esSuCumpleanios = True
 
 if (edad >= 18):

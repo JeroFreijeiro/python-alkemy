@@ -110,3 +110,9 @@ persona1 = {
 
 for p in persona1:
     print(f'{p}: {persona1[p]}')
+
+    """ 
+    nombre: Juan
+    apellido: Perez
+    edad: 30
+    altura: 1.75 """

@@ -41,3 +41,33 @@ def operacion_aritmetica():
 
 if __name__ == "__main__":
     operacion_aritmetica()
+
+
+""" ejercicio de compañero """
+
+def sumar(nro1, nro2):
+    print(nro1+nro2)
+
+def restar(nro1, nro2):
+    print(nro1-nro2)
+
+numero1 = int(input('Ingrese un número entero: '))
+numero2 = int(input('Ingrese otro número entero: '))
+
+salir = False
+
+while not salir:
+    print('A) Sumarlos')
+    print('B) Restarlos')
+    print('X) Salir')
+    opcion = input('Ingrese opcion A o B').upper()
+
+    match opcion:
+        case 'A':
+            sumar(numero1,numero2)
+        case 'B':
+            restar(numero1,numero2)
+        case 'X':
+            salir = True
+        case _:
+            print('Opcion no valida, reintente')

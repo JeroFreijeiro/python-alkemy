@@ -3,7 +3,7 @@
 # Nativas y definidas por el usuario
 
 # En casi cualquier lenguaje de programación, las funciones constan de bloques de código, que se encierran bajo un nombre
-#y esa función cumple una tare específica (no es gral), de esa manera es más fácil reutilizarla
+#y esa función cumple una tarea específica (no es gral), de esa manera es más fácil reutilizarla
 
 # 2 razones: optimizar código / ordenar el código (es más organizado)
 

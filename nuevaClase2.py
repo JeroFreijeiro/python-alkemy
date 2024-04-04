@@ -56,24 +56,25 @@ print(mult)
 div = num1 / num2 # División entera utiliza doble barra // y en lugar de un resultado con decimal devuelve un entero
 print(div)
 
-raizCuadrada = num1 ** num2
+raizCuadrada = num1 ** num2 # exponente
 print(raizCuadrada)
 
 
-# ASIGNACIÓN = ESTA VARIABLE ES (ESTE) DATO
+# ASIGNACIÓN = ESTA VARIABLE ES "ESTE" DATO
 variable = "Hola" # Esta variabe es el string "Hola"
 
 print(variable)
 
-# COMPARACIÓN = ESTA VARIABLE (ES IGUAL A) ESTA OTRA VARIABLE - devuelve un boolean
+# == COMPARACIÓN = ESTA VARIABLE (ES IGUAL QUE) ESTA OTRA VARIABLE - devuelve un boolean
 print(variable == "Hola") #true
 print(variable == "hola") #false
 
-# DISTINTO QUE (ES LO OPUESTO A "IGUAL QUE")
+# != DISTINTO QUE (ES LO OPUESTO A "IGUAL QUE")
 
 print(variable != "hola") #true
 
 
+""" operadores de comparación """
 edad = 18
 
 print(edad == 18) # igual que (18)  
@@ -83,7 +84,7 @@ print(edad >= 18) # mayor o igual que (18, 19, 20, 21, ...)
 print(edad < 18) # menor que (16, 17, 18, ...)  
 print(edad <= 18) # menor o igual que (16, 17, 18, ...)
 
-
+""" incremento/decremento """
 edad = 14
 print(edad)
 edad = edad + 1 #Puede simplificarse en el ejemplo de abajo (+=)
